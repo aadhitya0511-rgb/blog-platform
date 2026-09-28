@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevInk - Blog Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Auth Section -->
+    <div id="auth-section" class="auth-container">
+        <div class="auth-card">
+            <h2>✍️ DevInk</h2>
+            <p id="auth-subtitle">Sign in to your blog account</p>
+            <form id="auth-form" onsubmit="return false;">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button id="auth-btn" class="btn primary full">Login</button>
+            </form>
+            <p style="margin-top: 1rem; text-align: center; font-size: 0.85rem;">
+                <span id="auth-switch-text">Don't have an account? <a href="#" id="switch-mode" style="color: #38bdf8;">Register</a></span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Section -->
+    <div id="dashboard-section" style="display: none;">
+        <header class="navbar">
+            <div class="logo">✍️ DevInk Platform</div>
+            <div class="nav-right">
+                <span id="logged-in-user">👤 User</span>
+                <button id="logout-btn" class="btn danger">Logout</button>
+            </div>
+        </header>
+
+        <main class="container">
+            <!-- Create Post Card -->
+            <div class="card">
+                <h3>Create New Post</h3>
+                <form id="create-post-form" style="margin-top: 1rem;">
+                    <div class="input-group">
+                        <input type="text" id="post-title" placeholder="Post Title" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="post-content" rows="4" placeholder="Write your post content here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Publish Post</button>
+                </form>
+            </div>
+
+            <h2>Feed</h2>
+            <div id="posts-container" style="margin-top: 1rem;"></div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
